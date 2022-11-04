@@ -1,0 +1,75 @@
+.box-body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1500px;
+  .box-one {
+    height: 78vh;
+    width: 78vw;
+    background-color: blanchedalmond;
+    border-radius: 30px;
+  }
+  .box-one-ani {
+    height: 78vh;
+    width: 78vw;
+    background-color: blanchedalmond;
+    border-radius: 30px;
+    animation: scrollCardOne 1s cubic-bezier(0.29, 0.95, 0.78, 0.31);
+    transform-origin: 50% 50%;
+  }
+  .box-one-hide {
+    display: none;
+  }
+  .box-two-hide {
+    display: none;
+  }
+  .box-two-ani {
+    height: 39vh;
+    width: 78vw;
+    background-color: rgb(255, 205, 205);
+    // border-radius: 30px;
+  }
+  .box-two-ani-top {
+    border-radius: 30px 30px 0 0;
+    animation: scrollCardTwoTop 1s cubic-bezier(0, 0.38, 0.3, 0.79);
+    transform-origin: 50% 100%;
+  }
+  .box-two-ani-bottom {
+    border-radius: 0 0 30px 30px;
+    animation: scrollCardTwoBottom 1s cubic-bezier(0, 0.38, 0.3, 0.79);
+    transform-origin: 50% 0%;
+  }
+  @keyframes scrollCardOne {
+    0% {
+      transform: rotateX(0deg) scale(1);
+      filter: brightness(50%);
+    }
+
+    100% {
+      transform: rotateX(90deg) scale(0.87);
+      filter: brightness(100%);
+    }
+  }
+  @keyframes scrollCardTwoTop {
+    0% {
+      transform: rotateX(-90deg) scale(0.87);
+      filter: brightness(50%);
+    }
+
+    100% {
+      transform: rotateX(0) scale(1);
+      filter: brightness(100%);
+    }
+  }
+  @keyframes scrollCardTwoBottom {
+    0% {
+      transform: scale(0.87);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
